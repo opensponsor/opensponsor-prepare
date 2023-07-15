@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "opensponsor": {
+    "opensponsor-prepare": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -17,7 +17,8 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/opensponsor",
+            "localize": true,
+            "outputPath": "dist/opensponsor-prepare",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": [
@@ -51,12 +52,19 @@
               "outputHashing": "all"
             },
             "development": {
+              "localize": false,
               "buildOptimizer": false,
               "optimization": false,
               "vendorChunk": true,
               "extractLicenses": false,
               "sourceMap": true,
-              "namedChunks": true
+              "namedChunks": true,
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.development.ts"
+                }
+              ]
             }
           },
           "defaultConfiguration": "production"
@@ -65,10 +73,16 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "opensponsor:build:production"
+              "browserTarget": "opensponsor-prepare:build:production"
             },
             "development": {
-              "browserTarget": "opensponsor:build:development"
+              "browserTarget": "opensponsor-prepare:build:development"
+            },
+            "en": {
+              "browserTarget": "opensponsor-prepare:build:en"
+            },
+            "zh-Hans": {
+              "browserTarget": "opensponsor-prepare:build:zh-Hans"
             }
           },
           "defaultConfiguration": "development"
@@ -76,7 +90,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "opensponsor:build"
+            "browserTarget": "opensponsor-prepare:build"
           }
         },
         "test": {

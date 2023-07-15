@@ -1,0 +1,41 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+a:any-link {
+  text-decoration: none;
+}
+
+:where(html) {
+  line-height: 1.15;
+  font-family: Helvetica, Arial, "\5b8b\4f53", sans-serif;
+}
+
+:where(body) {
+  margin: 0;
+}
+
+:where(address) {
+  font-style: inherit;
+}
+
+:where(h1,h2,h3,h4,h5,h6) {
+  margin: 0;
+}
+
+:where(blockquote,figure,p,dl,dd) {
+  margin: 0;
+}
+
+:where(pre) {
+  margin: 0;
+  font-family: inherit;
+}
+
+:where(ul,ol) {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}

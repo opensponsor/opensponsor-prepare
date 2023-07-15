@@ -1,0 +1,15 @@
+<mat-card>
+  <mat-card-header>
+    <button mat-mini-fab
+            mat-dialog-close
+            tabindex="-1"
+            class="bg-gray-100 shadow-none text-black">
+      <mat-icon>close</mat-icon>
+    </button>
+    <div style="flex: 1 1 auto"></div>
+    <button mat-button [cdkCopyToClipboard]="value" (click)="copy()">{{buttonLabel}}</button>
+  </mat-card-header>
+  <mat-card-content>
+    <textarea id="clipboard-example-textarea" readonly rows="5" class="w-full" [(ngModel)]="value"></textarea>
+  </mat-card-content>
+</mat-card>

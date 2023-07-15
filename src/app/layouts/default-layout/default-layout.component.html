@@ -1,0 +1,35 @@
+<div fxLayout="column">
+
+  <div fxLayout="column" fxLayout.xs="column" class="z-50" [ngStyle]="{position: 'sticky', 'top.px': stickyHeaderTop}">
+    <div fxFlex="80" fxFlex.sm="100" fxFlex.xs="100" class="navigation">
+      <header>
+        <mat-toolbar fxLayoutGap="8px">
+          <button mat-button disableRipple routerLink="/">
+            <img class="inline" style="height: 30px;" src="/assets/logo.svg" alt="">
+            <span class="font-bold text-gray-800">&nbsp;&nbsp;开放赞助平台</span>
+          </button>
+          <div style="flex: 1 1 auto"></div>
+          <div>
+            <a *ngFor="let menu of MainMenus" mat-button [routerLink]="menu.link">{{menu.label}}</a>
+          </div>
+          <app-recommend-we />
+        </mat-toolbar>
+      </header>
+    </div>
+  </div>
+
+  <div fxLayout="column">
+    <div fxLayout="column" fxLayout.sm="column" fxLayout.xs="column">
+      <div fxFlex="100" fxLayoutAlign="center">
+        <div fxFlex="80" fxFlex.lt-md="90" class="min-h-screen">
+          <router-outlet/>
+        </div>
+      </div>
+    </div>
+
+    <div fxLayout="column">
+      <app-footer/>
+    </div>
+  </div>
+
+</div>
