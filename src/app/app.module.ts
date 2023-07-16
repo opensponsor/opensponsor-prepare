@@ -6,10 +6,6 @@ import {AppComponent} from './app.component';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {LayoutsModule} from "@/app/layouts/layouts.module";
 
-// import localeZhHans from '@angular/common/locales/zh-Hans';
-// import localeEn from '@angular/common/locales/en';
-// import {registerLocaleData} from "@angular/common";
-// registerLocaleData(localeZhHans, localeEn);
 
 @NgModule({
   declarations: [

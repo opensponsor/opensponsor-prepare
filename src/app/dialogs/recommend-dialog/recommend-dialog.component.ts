@@ -7,11 +7,12 @@ import { Component } from '@angular/core';
 })
 export class RecommendDialogComponent {
   value =
-      `分享给朋友`;
+      `OpenSponsor`;
 
   buttonLabel = '复制';
 
   copy() {
     this.buttonLabel = '已经复制';
+    setTimeout(() => this.buttonLabel = '复制', 1000);
   }
 }
