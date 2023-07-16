@@ -7,6 +7,7 @@ import {ComponentsModule} from "@/app/components/components.module";
 import {MatChipsModule} from "@angular/material/chips";
 import {FlexLayoutModule} from "@angular/flex-layout";
 import {MatCardModule} from "@angular/material/card";
+import {MatTooltipModule} from "@angular/material/tooltip";
 
 const routes: Routes = [
   {
@@ -18,15 +19,16 @@ const routes: Routes = [
   declarations: [
     IndexComponent
   ],
-    imports: [
-        RouterModule.forChild(routes),
-        CommonModule,
-        MatButtonModule,
-        ComponentsModule,
-        MatChipsModule,
-        FlexLayoutModule,
-        MatCardModule,
-    ]
+  imports: [
+    RouterModule.forChild(routes),
+    CommonModule,
+    MatButtonModule,
+    ComponentsModule,
+    MatChipsModule,
+    FlexLayoutModule,
+    MatCardModule,
+    MatTooltipModule,
+  ]
 })
 export class HomeModule {
 }
